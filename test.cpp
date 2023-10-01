@@ -18,5 +18,6 @@ int main() {
   const size_t size{5};
   int arr[size] = {4, 1, 3, 2, 5};
   testSort(arr, size, "BubbleSort", bubbleSort);
+  testSort(arr, size, "SelectionSort", selectionSort);
   testSort(arr, size, "InsertionSort", insertionSort);
 }
