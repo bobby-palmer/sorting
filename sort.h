@@ -12,3 +12,17 @@ inline void bubbleSort(int arr[], size_t size) {
     sorted++;
   }
 }; // bubbleSort()
+
+inline void insertionSort(int arr[], size_t size) {
+  for (size_t i = 0; i < size; ++i) {
+    size_t smallest = i;
+    for (size_t j = i; j < size; ++j) {
+      if (arr[j] < arr[smallest]) {
+        smallest = j;
+      }
+    }
+    int temp = arr[smallest];
+    arr[smallest] = arr[i];
+    arr[i] = temp;
+  }
+} // insertionSort
