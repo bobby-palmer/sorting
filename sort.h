@@ -46,4 +46,8 @@ inline void insertionSort(int arr[], size_t size) {
     }
     arr[j] = v;
   }
-}; // 
+}; // insertionSort
+
+inline void quickSort(int arr[], size_t size) {
+  return;
+}
