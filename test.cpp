@@ -24,7 +24,7 @@ void testSort(size_t size, sorter alg) {
       return;
     }
   }
-  cout << "passed test !" << endl;
+  cout << "passed test!" << endl;
 }
 
 int main() {
