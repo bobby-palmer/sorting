@@ -12,7 +12,7 @@ void testSort(size_t size, sorter alg) {
   int* arr = new int[size];
 
   // fill with random values
-  generate(arr, arr + size, rand());
+  generate(arr, arr + size, rand);
 
   // use sorter
   alg(arr, size); 
