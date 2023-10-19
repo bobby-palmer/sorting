@@ -48,6 +48,14 @@ inline void insertionSort(int arr[], size_t size) {
   }
 }; // insertionSort
 
-inline void quickSort(int arr[], size_t size) {
-  return;
+namespace {
+  inline int* partition(int arr[], size_t size) {
+    return nullptr; // for comp
+  }
 }
+inline void quickSort(int arr[], size_t size) {
+  int* end = arr + size;
+  auto mid = partition(arr, size);
+  quickSort(arr, mid - arr);
+  quickSort(mid + 1, end - (mid + 1));
+}; // quickSort
