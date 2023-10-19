@@ -1,4 +1,5 @@
 #include <cstddef>
+#include <algorithm>
 inline void bubbleSort(int arr[], size_t size) {
   size_t sorted = 0;
   while (sorted < size) {
@@ -50,10 +51,26 @@ inline void insertionSort(int arr[], size_t size) {
 
 namespace {
   inline int* partition(int arr[], size_t size) {
-    return nullptr; // for comp
+    int* end = arr + size - 1;
+    int* pivot = end--; 
+    while (arr <= end) {
+      if (*arr < *pivot) {
+        ++arr;
+      } else if (*pivot < *end) {
+        --end;
+      } else {
+        std::swap(*arr, *end);
+      }
+    }
+    std::swap(*pivot, *arr);
+    return arr;
   }
-}
+}; // private partition method
+
 inline void quickSort(int arr[], size_t size) {
+  if (size <= 1) {
+    return;
+  }
   int* end = arr + size;
   auto mid = partition(arr, size);
   quickSort(arr, mid - arr);
